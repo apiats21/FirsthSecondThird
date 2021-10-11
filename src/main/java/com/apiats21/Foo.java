@@ -14,14 +14,15 @@ public  class Foo {
         } catch (InterruptedException e) { e.printStackTrace(); }
         semSecond.release();
     }
-    public void second() {
 
+    public void second() {
         try {
             semSecond.acquire();
             System.out.print("second");
         } catch (InterruptedException e) { e.printStackTrace(); }
         semThird.release();
     }
+
     public void third() {
         try {
             semThird.acquire();
